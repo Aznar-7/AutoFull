@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="es">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="theme-color" content="#0b74de" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Control Auto Wi‑Fi</title>
+</head>
+<body>
+  <header class="topbar">
+    <div class="title">Auto Wi‑Fi</div>
+    <div id="conn" class="status" aria-live="polite">
+      <span class="dot" aria-hidden="true"></span>
+      <span class="text">conectando…</span>
+    </div>
+  </header>
+
+  <main class="panel" role="main">
+    <section class="info" aria-hidden="false">
+      <div class="status-block">Estado: <span id="state" class="state">—</span></div>
+      <div class="status-block">Sensor: <span id="sensor">—</span></div>
+
+      <div class="env">
+        <div class="env-item">T: <strong id="temp">—</strong>°C
+          <div class="meter" id="t-meter" aria-hidden="true"><div class="meter-fill"></div></div>
+        </div>
+        <div class="env-item">H: <strong id="hum">—</strong>%
+          <div class="meter" id="h-meter" aria-hidden="true"><div class="meter-fill"></div></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="pad" aria-label="Controles">
+      <button class="btn arrow up" data-cmd="forward" aria-label="Adelante">↑</button>
+      <div class="row">
+        <button class="btn arrow left" data-cmd="left" aria-label="Izquierda">←</button>
+        <button id="stop" class="btn stop" data-cmd="stop" aria-label="Detener">■</button>
+        <button class="btn arrow right" data-cmd="right" aria-label="Derecha">→</button>
+      </div>
+      <button class="btn arrow down" data-cmd="backward" aria-label="Atrás">↓</button>
+    </section>
+
+    <footer class="hint">Mantén presionado para mover; suelta para detener. Usa flechas o pantalla táctil.</footer>
+  </main>
+
+  <script src="script.js" defer></script>
+</body>
+</html>
